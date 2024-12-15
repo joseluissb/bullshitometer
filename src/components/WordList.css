@@ -1,0 +1,61 @@
+.word-list-container {
+  padding: 0 10px 0 0;
+  margin-bottom: 30px;
+}
+
+.word-list-container h2 {
+  margin-bottom: 20px;
+}
+
+.word-list-container .input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.word-list-container input {
+  padding: 10px;
+  margin-right: 10px;
+  flex-grow: 1;
+}
+
+.word-list-container button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.word-list-container button:hover {
+  background-color: #0056b3;
+}
+
+.word-list-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.word-list-container li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.word-list-container li .word-text {
+  flex-grow: 1; /* This will make the word text take up available space */
+}
+
+.word-list-container li div {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* This will push the buttons to the right */
+}
+
+.word-list-container li button {
+  margin-left: 10px;
+}

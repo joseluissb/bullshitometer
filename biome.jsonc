@@ -1,0 +1,35 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "useNodejsImportProtocol": "error",
+        "useImportType": "error"
+      }
+    }
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "ignore": ["package-lock.json"]
+  },
+  "json": {
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": false
+    },
+    "formatter": {
+      "indentStyle": "space",
+      "trailingCommas": "none"
+    }
+  },
+  "files": {
+    "ignore": ["**/node_modules/**", "**/dist/**", "**/smoke/**", "**/fixtures/**", "**/vendor/**", "**/.vercel/**"]
+  }
+}
