@@ -1,8 +1,5 @@
 import { maxbullshitUnits } from "./levels";
-
-// Check if SpeechRecognition is supported
-const supportedSpeechRecognition = window.webkitSpeechRecognition !== undefined;
-
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const subscribedCallbacks: ((bullshitUnits: number) => void)[] = [];
 
 const unitsIncrement = 1000;
@@ -36,11 +33,6 @@ function onTranscriptWords(transcript: string) {
 export function startTracking(wordsToTrack: string[]) {
   console.log("Starting speech recognition...");
 
-  if (!supportedSpeechRecognition) {
-    console.error("Speech Recognition API is not supported in this browser.");
-    return;
-  }
-
   // Words list to track and their match counters
   wordsToTrackMap = {};
   for (const word of wordsToTrack) {
@@ -53,7 +45,12 @@ export function startTracking(wordsToTrack: string[]) {
     return;
   }
 
-  recognition = new webkitSpeechRecognition();
+  if (!SpeechRecognition) {
+    console.error("SpeechRecognition is not supported in this browser.");
+    return;
+  }
+
+  recognition = new SpeechRecognition();
   recognition.lang = "en-US"; // Set the language
   recognition.continuous = true; // Keep listening continuously
   recognition.interimResults = false; // Only handle finalized words
